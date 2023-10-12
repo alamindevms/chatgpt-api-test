@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --text-color: #404040;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: system, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    max-width: 60rem;
+    margin: 0 auto 0 auto;
+}
+.content {
+    margin-bottom: 3rem;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+.messages {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+.messages > div:first-of-type {
+    border-top: 1px solid #aaa;
+}
+.input-container {
+    position: relative;
+}
+
+.input-wrapper {
+    border-radius: 5px;
+    padding: 0.8rem;
+    border: 1px solid #aaa;
+    box-shadow: 0px 0px 10px #aaa;
+}
+.input:focus {
+    outline: none;
+}
+.send-button-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.3rem;
+    display: flex;
+    align-items: center;
+}
+.send-button {
+    background: teal;
+    border: none;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: inline-block;
+    color: white;
+    line-height: 1;
+}
+.send-button:hover {
+    background: #ddd;
+}
+.send-button:active {
+    margin-top: 2px;
+}
+.grow-wrap {
+    display: grid;
+}
+.grow-wrap::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+.grow-wrap > textarea {
+    resize: none;
+    overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    width: 34rem;
+    font: inherit;
+    font-size: 1.2rem;
+    grid-area: 1 / 1 / 2 / 2;
+}
